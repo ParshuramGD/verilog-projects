@@ -1,0 +1,44 @@
+module traffic_light_controller(input clk , input x , output green , red , yellow );
+
+
+
+
+parameter ST_IDLE = 0 ; ST_GREEN = 1 ; ST_YELLOW = 2 ; ST_RED = 3;
+
+reg [1:0] state = ST_IDLE;
+
+
+
+always @(*)
+
+begin
+
+
+case (state)
+
+ST_IDLE : state = ST_GREEN;
+
+
+ST_GREEN :begin
+green = 1 ; red = 0 ; yellow = 0;
+state = ST_YELLOW;
+end
+
+
+ST_YELLOW : begin
+green = 0 ; red = 0 ; yellow = 1;
+state = ST_RED;
+
+end
+
+ST_RED : begin
+green = 0 ; red = 1 ; yellow = 0;
+state = ST_GREEN;
+end
+
+default : state = ST_IDLE;
+
+endcase
+
+end
+
