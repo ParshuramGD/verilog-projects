@@ -123,7 +123,7 @@ Potential enhancements include:
 ---
 
 ## Author
-Created by a Computer Engineering student passionate about:
+Created by a Electronics Engineering student passionate about:
 - RTL Design
 - Digital Electronics
 - Computer Architecture
